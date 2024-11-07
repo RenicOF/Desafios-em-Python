@@ -1,0 +1,67 @@
+Vamos detalhar cada parte do processo para que você possa entender como contar linhas e palavras em um arquivo .txt em Python.
+
+1. Abertura do Arquivo
+No código, usamos open() para abrir o arquivo. Porém, para facilitar a manipulação e garantir que o arquivo seja automaticamente fechado depois de ser usado, usamos a construção with open(...) as ....
+
+Aqui está como funciona:
+
+python
+Copiar código
+with open("arquivos/tenho que aprender.txt", "r") as arquivo:
+    # Agora podemos usar "arquivo" para ler o conteúdo
+Com with, o Python cuida de fechar o arquivo para você, evitando problemas que surgem se esquecermos de fechá-lo manualmente com texto.close().
+
+2. Leitura das Linhas
+Quando queremos contar linhas, usamos readlines(), que lê todas as linhas do arquivo e as armazena como elementos em uma lista.
+
+python
+Copiar código
+linhas = arquivo.readlines()
+Assim, linhas agora é uma lista onde cada item representa uma linha do arquivo. Por exemplo, se o arquivo tiver 3 linhas, linhas será algo como:
+
+python
+Copiar código
+['Primeira linha\n', 'Segunda linha\n', 'Terceira linha\n']
+3. Contagem de Linhas
+Para contar as linhas, basta usar len(linhas), que nos dá o número total de elementos na lista linhas (ou seja, o número de linhas).
+
+python
+Copiar código
+total_linhas = len(linhas)
+4. Contagem de Palavras
+Para contar palavras, precisamos fazer mais algumas operações. Vamos dividir cada linha em palavras e contar quantas existem.
+
+python
+Copiar código
+total_palavras = sum(len(linha.split()) for linha in linhas)
+Aqui está o que está acontecendo:
+
+linha.split(): split() divide a linha em uma lista de palavras. Por exemplo, "Olá mundo" -> ["Olá", "mundo"].
+len(linha.split()): Conta quantas palavras existem na linha.
+sum(...): Calcula a soma total de palavras em todas as linhas.
+5. Função Completa
+Agora, juntando tudo:
+
+python
+Copiar código
+def contar_linhas_e_palavras(caminho_arquivo):
+    with open(caminho_arquivo, "r") as arquivo:
+        linhas = arquivo.readlines()
+    
+    total_linhas = len(linhas)
+    total_palavras = sum(len(linha.split()) for linha in linhas)
+    
+    return total_linhas, total_palavras
+
+# Uso da função
+resultado_linhas, resultado_palavras = contar_linhas_e_palavras("arquivos/tenho que aprender.txt")
+print(f"Linhas: {resultado_linhas}")
+print(f"Palavras: {resultado_palavras}")
+Resumo do Funcionamento
+Abre o arquivo com with open(...) as ....
+Lê todas as linhas com readlines().
+Conta as linhas com len(linhas).
+Conta as palavras somando o número de palavras em cada linha com sum(...).
+Retorna o número total de linhas e palavras.
+Esse código é robusto e garante que o arquivo será sempre fechado após o uso, além de realizar corretamente a contagem de linhas e palavras.
+
