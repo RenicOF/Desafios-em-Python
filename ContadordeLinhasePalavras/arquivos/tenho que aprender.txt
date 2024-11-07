@@ -1,0 +1,7 @@
+- Desenvolvimento Back-end: Node (NestJS).
+
+- Desenvolvimento Front-end: Dart (Flutter).
+
+- Infraestruturação de dados: AWS S3 e RDS, Postgres e TypeORM.
+
+- Conteinerização: Docker.
