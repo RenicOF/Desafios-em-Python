@@ -1,0 +1,11 @@
+Explicação do Código
+Filtros de categoria e preço mínimo:
+
+Ajuste categoria_desejada e preco_minimo conforme necessário para os produtos que deseja listar.
+Leitura e divisão da linha:
+
+Para cada linha, o código divide (split) os valores em nome, categoria, e preço usando vírgulas como separador.
+Filtro e Impressão:
+
+Filtra por categoria ou por preco >= preco_minimo e exibe os produtos que atendem aos critérios.
+Este código imprimirá produtos que sejam da categoria "Roupas" ou que tenham um preço de 100 ou mais, conforme especificado no exemplo.
