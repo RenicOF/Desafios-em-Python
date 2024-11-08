@@ -1,0 +1,6 @@
+Marcos, Eletrônicos, 50
+Rubens, Alimentos, 700
+Bob, Roupas, 500
+Alex, Eletrônicos, 150
+Vania, Alimentos, 650
+Nita, Roupas, 350
