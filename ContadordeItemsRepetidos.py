@@ -1,3 +1,5 @@
+#Crie uma função que receba uma lista e um item e conte quantas vezes esse item aparece na lista. Teste a função com uma lista de números e outra de strings para ver se ela funciona com ambos os tipos de dados.
+
 lista = [5, 6, 7, 9, 20, 30, 40, 40, 40, 39, 39, 20, 20]
 
 def conta(lista, item):
